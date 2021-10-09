@@ -1,3 +1,6 @@
+## What?
+This bot pretty much just exists to tell me when a GPU has become available.
+
 ## Installation
 
 Clone this repository, and run `yarn install`. The CLI will be available with the command `yarn cli`.

@@ -3,7 +3,7 @@ import { Routes } from 'discord-api-types/v9';
 
 import config, { TOKEN, CLIENT_ID } from './config'
 
-export const register = async (guildId: string) => {
+export const register = async (guildId: string): Promise<void> => {
   const commands = [{
     name: 'ping',
     description: 'Replies with Pong!'

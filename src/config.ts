@@ -19,36 +19,36 @@ export class Config {
             GUILDS: []
         }
     }
-    save() {
+    save(): void {
         writeFileSync(this.path, JSON.stringify(this.config, null, 2))
         console.info(chalk.greenBright('Config saved successfully.'))
     }
 
-    show() {
+    show(): void {
         console.log(JSON.stringify(this.config, null, 2))
     }
 
-    get TOKEN () {
+    get TOKEN (): string {
         return this.config.TOKEN
-    }
-
-    get CLIENT_ID (): string {
-        return this.config.CLIENT_ID
-    }
-
-    get GUILDS () {
-        return this.config.GUILDS
     }
 
     set TOKEN (token: string) {
         this.config.TOKEN = token
     }
 
+    get CLIENT_ID (): string {
+        return this.config.CLIENT_ID
+    }
+
     set CLIENT_ID (clientId: string) {
         this.config.CLIENT_ID = clientId
     }
 
-    addGuild(guildId: string) {
+    get GUILDS (): string[] {
+        return this.config.GUILDS
+    }
+
+    addGuild(guildId: string): void {
         const guilds = new Set([...this.config.GUILDS, guildId])
         this.config.GUILDS = Array.from(guilds)
     }

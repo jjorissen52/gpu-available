@@ -6,7 +6,7 @@ const client = new Client({ intents: [Intents.FLAGS.GUILDS] });
 
 
 
-export const serve = () => {
+export const serve = (): void => {
     client.on('ready', () => {
         if (!client?.user) return console.error(chalk.red('Client was somehow null.'))
         console.log(chalk.cyanBright(`Logged in as ${client.user.tag}!`));
